@@ -1,0 +1,552 @@
+/* See http://modularscale.com/ */
+/* http://24ways.org/2011/composing-the-new-canon */
+/* http://www.alistapart.com/articles/more-meaningful-typography/ */
+/* http://blog.8thlight.com/billy-whited/2011/10/28/r-a-ela-tional-design.html#tips */
+$modular-scale: 1.25; // major third
+$modular-base: 1em;
+
+$background: #f8f8f8;
+
+$font-color: #302c22;
+$link-color: #268bd2; // http://ethanschoonover.com/solarized
+$focus-color: #d33682;
+
+$solarized-base0: #657b83;
+$solarized-base3: #fdf6e3;
+$solarized-base2: #ddd8d5;
+$solarized-base03: #002b36;
+$solarized-base02: #073642;
+$solarized-base01: #586e75;
+$solarized-base00: #657b83;
+$solarized-yellow: #b58900;
+
+
+$navbar-color: rgba(235,235,235,0.95);
+$code-font-face: monospace;
+$body-font-face: 'Whitney SSm A', 'Whitney SSm B', sans-serif;
+$heading-font-face: 'Whitney SSm A', 'Whitney SSm B', sans-serif;
+
+@mixin bold-heading {
+  font: {
+    family: $heading-font-face;
+    weight: 700;
+  }
+  line-height: normal;
+}
+@mixin no-indent {
+  -webkit-padding-start: 0;
+}
+body {
+  margin: 0;
+  color: $font-color;
+  word-wrap: break-word;
+  font: {
+    family: $body-font-face;
+    weight: 400;
+    style: normal;
+    size: $modular-base;
+  }
+  line-height: $modular-base * $modular-scale * $modular-scale;
+  background-color: $background;
+  text-rendering: optimizeLegibility;
+}
+a, a:active, a:hover, a:visited {
+  color: $link-color;
+  text-decoration: none;
+}
+article, aside, details, figcaption, figure, hgroup, menu, nav, section {
+  display: block;
+}
+header.cf {
+  display: inline-block;
+  width: 100%;
+}
+img {
+  width: inherit;
+  max-width: 100%;
+  height: auto;
+}
+h2, h3, h4 {
+  @include bold-heading;
+}
+h1 {
+  @include bold-heading;
+  font: {
+    weight: 800;
+    size: $modular-base * $modular-scale * $modular-scale;
+  }
+  padding: 0;
+  @media only screen and (min-width: 1024px) and (orientation: landscape) {
+    font-size: $modular-base * $modular-scale * $modular-scale * $modular-scale;
+  }
+}
+h2 {
+  font-size: $modular-base * $modular-scale * $modular-scale;
+  line-height: 1.5em;
+  padding: 0;
+}
+h3 {
+  font-size: $modular-base * $modular-scale;
+  padding: 0;
+  margin: 0;
+}
+h4 {
+  margin: $modular-base 0;
+}
+h4 a, h4 a:link, h4 a:visited, h4 a.active {
+  margin-top: $modular-base;
+  color: $font-color;
+}
+@mixin monospace {
+  background-color: white;
+  line-height: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+code, pre {
+  @include monospace;
+  font: {
+    family: $code-font-face;
+    size: $modular-base / $modular-scale;
+  }
+}
+div.codeblock, pre {
+  @include monospace;
+  border: 1px solid #ccc;
+  padding: $modular-base / $modular-scale / $modular-scale;
+  color: $solarized-base01;
+  margin-bottom: $modular-base / $modular-scale;
+}
+label {
+  display: block;
+}
+.page-title-home:after {
+  color: $font-color;
+  float: right;
+  display: inline-block;
+  font: {
+    family: FontAwesome;
+    style: normal;
+    weight: normal;
+  }
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f015";
+}
+.article-title {
+  strong {
+    @include bold-heading;
+    color: $font-color;
+    font-size: $modular-base * $modular-scale;
+  }
+  a {
+    color: $font-color;
+  }
+}
+div#allofit {
+  padding: $modular-base * $modular-scale 0 0 0;
+  font-size: $modular-base;
+  display: block;
+  margin: 0 auto $modular-base * 8 auto;
+  width: 80%;
+  h1 {
+    border-bottom: 1px solid $solarized-base2;
+    margin: 0 0 0.4em 0;
+    padding: 0 0 0.5em 0;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+    width: 70%;
+  }
+  @media only screen and (min-width: 1024px) and (orientation: landscape) {
+    width: 60%;
+  }
+}
+.content p {
+  margin: $modular-base 0;
+}
+ul.primary {
+  border-collapse: collapse;
+  height: auto;
+  line-height: normal;
+  list-style: none;
+  margin: 5px;
+  white-space: nowrap;
+}
+ul.primary li {
+  display: inline;
+}
+ul.primary li a {
+  background-color: $solarized-base2;
+  border: 1px solid $solarized-base2;
+  height: auto;
+  margin-right: 0.5em; /* LTR */
+  padding: 0 1em;
+  text-decoration: none;
+}
+ul.primary li.active a {
+  background-color: white;
+  border: 1px solid $solarized-base02;
+}
+ul.primary li a:hover {
+  border: 1px solid $solarized-base02;
+}
+ul.secondary {
+  padding: 0.5em 1em;
+  margin: 5px;
+}
+ul.secondary li {
+  border-right: 1px solid #ccc; /* LTR */
+  display: inline;
+  padding: 0 1em;
+}
+ul.secondary a {
+  padding: 0;
+  text-decoration: none;
+}
+ul.secondary a.active {
+  border-bottom: 4px solid #999;
+}
+table {
+  margin-top: $modular-base;
+  margin-bottom: $modular-base;
+  background-color: white;
+}
+th, td {
+  padding: 6px;
+}
+th {
+  @include bold-heading;
+}
+tr.even, tr.odd {
+  border: 1px solid $solarized-base2;
+}
+tr.even {
+  background-color: $solarized-base3;
+}
+tr.odd {
+  background-color: $solarized-base2;
+}
+section.node-teaser {
+  clear: both;
+}
+article.nodeteaser {
+  border-bottom: 1px solid $solarized-base2;
+  position: relative;
+  list-style-type: none;
+  margin-bottom: $modular-base;
+}
+article.nodeteaser a {
+  color: $font-color;
+}
+article.article-link {
+  display: block;
+  padding: 1em 1.25em 1.25em;
+  -webkit-tap-highlight-color: #eceae6;
+  z-index: 10;
+}
+article aside.nodesummary {
+  ul {
+    @include no-indent;
+    list-style: none;
+  }
+  margin: $modular-base 0;
+  font-size: $modular-base / $modular-scale;
+  @media only screen and (min-width: 1024px) and (orientation: landscape) {
+    float: right;
+    width: 20%;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1024px) and (orientation: landscape) {
+  div.content.nodeteaser {
+    width: 75%;
+  }
+}
+.fa-tags, .field-item.even, .fa-tags, .field-item.odd, .fa-tag {
+  display: inline;
+}
+.field-type-taxonomy-term-reference {
+  label {
+    display: none;
+  }
+}
+[class^="fa-"]:before, [class*=" fa-"]:before {
+  padding-right: .5em;
+}
+li [class^="fa-"], li [class*=" fa-"] {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+}
+.region-bottom-nav-first {
+  width: 100%;
+  clear: both;
+  text-align: center;
+  padding: .5em 0;
+  form {
+    margin-left: 14%;
+    margin-right: 14%;
+    .form-text {
+      width: 76%;
+    }
+    .form-submit {
+      width: 20%;
+    }
+  }
+}
+.region-bottom-nav-second, .region-bottom-nav-third {
+  display: table;
+  width: 50%;
+  float: left;
+  padding: .5em 0 1em 0;
+  .block-content {
+    margin-left: 17%;
+  }
+}
+.filter-wrapper {
+  background-color: white;
+}
+
+#bottom-nav {
+  border-top: 1px solid $solarized-base2;
+  margin-top: $modular-base;
+  padding-top: $modular-base;
+}
+.form-item-search-block-form {
+  float: left;
+  width: 75%;
+  max-width: 350px;
+}
+#edit-search-block-form--2 {
+  width: 95%;
+}
+/* joyent cloud form for search box */
+#main-menu {
+  border-bottom: 1px solid #aaaaa8;
+  margin-top: 0px;
+  overflow: hidden;
+  padding: .5em .625em;
+  background-color: $navbar-color;
+  text-align: center;
+  z-index: 10;
+}
+#main-menu ul {
+  @include no-indent;
+  margin: 0;
+}
+#main-menu li { display: inline }
+#main-menu a {
+  display: inline;
+  padding: .25em .625em .313em;
+  line-height: 1em;
+  border-radius: 1em;
+  color: #545450;
+  text: {
+    transform: uppercase;
+    decoration: none;
+  }
+  -webkit-tap-highlight-color: #81817a;
+  .main-menu-icon {
+    display: inline;
+  }
+}
+#main-menu .active a {
+  background: #81817a;
+  -webkit-box-shadow: -1px -1px 1px #5a5a55;
+  box-shadow: -1px -1px 1px #5a5a55;
+  color: #eaeae7;
+}
+ul.pager, ul.tabs {
+  left: 0;
+  @include no-indent;
+}
+.item-list-pager .pager {
+  clear: both;
+  text-align: center;
+  font-family: $body-font-face;
+}
+.item-list-pager .pager li {
+  background-image: none;
+  display: none;
+  list-style-type: none;
+  padding: ($modular-scale - $modular-base);
+  @media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+    padding: $modular-scale - $modular-base;
+  }
+  @media only screen and (min-width: 1024px) and (orientation: landscape) {
+    padding: $modular-base / $modular-scale / $modular-scale / $modular-scale;
+  }
+}
+.search-results article {
+  border-top: 1px solid $solarized-base2;
+  padding: $modular-base 0;
+}
+.pager li.previous, .pager li.next {
+  display: inline;
+}
+.pager .current {
+  @include bold-heading;
+}
+section[role=footerboard] {
+  padding: $modular-base 0;
+}
+#blog-prev, #blog-next, #blog-prev a, #blog-next a {
+  font-size: $modular-base;
+  position: fixed;
+  top: 25%;
+  color: $font-color;
+  opacity: 0.5;
+  text-decoration: none;
+}
+#blog-prev:hover, #blog-next:hover {
+  opacity: 1;
+}
+#blog-prev {
+  left: 2.5%;
+}
+#blog-next {
+  right: 2.5%;
+}
+div.region.region-bottom-nav-first div.block.block-views h2.title {
+  padding: 0;
+  margin: 0;
+  font: {
+    size: 1em;
+    weight: normal;
+  }
+  line-height: .5em;
+}
+footer.vcard {
+  background-color: $font-color;
+  clear: both;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  a, a:active, a:hover, a:visited {
+    color: $background;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0.6em 0;
+    vertical-align: bottom;
+    text-decoration: none;
+  }
+  .footer-1, .footer-4 {
+    width: 19%;
+  }
+  .footer-2, .footer-3 {
+    width: 30%;
+  }
+  .label {
+    display: inline;
+  }
+  @media only screen and (max-width: 768px) {
+    .footer-1, .footer-2, .footer-3 {
+      width: 25%;
+      .label {
+        display: none;
+      }
+    }
+    .footer-4 {
+      width: 17%;
+      .label {
+        display: none;
+      }
+
+    }
+  }
+}
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  footer {
+    position: fixed;
+    background-color: black;
+    a {
+      color: white;
+    }
+  }
+  body {
+    padding-bottom: 2em;
+  }
+  .region-bottom-nav-first {
+    text-align: left;
+    form {
+      margin-left: 0;
+      margin-right: 0;
+      .form-text {
+        width: 72%;
+      }
+      .form-submit {
+        width: 25%;
+      }
+    }
+  }
+  .region-bottom-nav-second, .region-bottom-nav-third {
+    .block-content {
+      margin-left: 0;
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  #blog-prev, #blog-next, #blog-prev a, #blog-next a {
+    font-size: $modular-base * $modular-scale * $modular-scale * $modular-scale;
+  }
+  #blog-prev {
+    left: 4%;
+  }
+  #blog-next {
+    right: 4%;
+  }
+  .region-bottom-nav-first {
+    form {
+      margin-left: 17%;
+      margin-right: 17%;
+      .form-text {
+        width: 80%;
+      }
+      .form-submit {
+        width: 16%;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1024px) and (orientation: landscape) {
+  [class^="region-bottom-nav-"], [class*=" region-bottom-nav-"] {
+    float: left;
+    display: table;
+  }
+  .region-bottom-nav-first {
+    text-align: left;
+    padding-right: $modular-base;
+    width: 48%;
+    form {
+      margin-left: 0%;
+      margin-right: 0%;
+    }
+  }
+  .region-bottom-nav-second {
+    padding-right: $modular-base;
+    width: 23%;
+  }
+  .region-bottom-nav-third {
+    padding-right: $modular-base;
+    width: 20%;
+  }
+  #blog-prev, #blog-next, #blog-prev a, #blog-next a {
+    font-size: $modular-base * $modular-scale * $modular-scale * $modular-scale * $modular-scale;
+    top: 50%;
+  }
+  #blog-prev {
+    left: 8%;
+  }
+  #blog-next {
+    right: 8%;
+  }
+  header.cf {
+    margin-bottom: $modular-base * $modular-scale * $modular-scale * $modular-scale;
+    #main-menu {
+      top: 0;
+      width: 100%;
+      position: fixed;
+    }
+  }
+}
