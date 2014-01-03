@@ -11,6 +11,7 @@ The main menu navigation bar is designed for the admin, node/add, and user/logou
 * Apple touch icons
 * favicon.ico
 * logo.png
+* page--404.tpl.php
 * @font-face for Whitney SSm A and Whitney SSm B. You will need to obtain proper licensing for this, paid through [H&FJ](http://www.typography.com/).
 
 ## Licensing
