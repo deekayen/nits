@@ -19,7 +19,6 @@
       <meta name="apple-mobile-web-app-status-bar-style" content="black">
       <link rel="stylesheet" type="text/css" href="//cloud.typography.com/618400/733542/css/fonts.css" />
       <?php print $styles; ?>
-      <?php print $respondjs; ?>
       <!--[if lt IE 9]>
         <script src="<?php print drupal_get_path('theme', 'mothership'); ?>/js/html5.js"></script>
       <![endif]-->

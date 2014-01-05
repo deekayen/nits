@@ -37,7 +37,6 @@ hide($content['links']);
   </div>
 
   <?php print render($content['links']); ?>
-  <nav><?php print $breadcrumb; ?></nav>
 
   <?php print render($content['comments']); ?>
 </article>

@@ -4,19 +4,21 @@
 */
 
 function nits_preprocess_page(&$vars, $hook) {
-  $node = $vars['node'];
+  if (isset($vars['node'])) {
+    $node = $vars['node'];
 
-  if ($node->type == 'blog') {
-    $prev_node = db_query("SELECT nid, title FROM {node} WHERE type = :type AND nid > :nid AND status = 1 ORDER BY nid ASC LIMIT 1", array(':type' => $node->type, ':nid' => $node->nid))->fetchObject();
-    if ($prev_node->nid) {
-      $vars['blog_prev_url'] = url('node/' . $prev_node->nid);
-      $vars['blog_prev_title'] = check_plain($prev_node->title);
-    }
+    if (isset($node->type) && $node->type == 'blog') {
+      $prev_node = db_query("SELECT nid, title FROM {node} WHERE type = :type AND nid > :nid AND status = 1 ORDER BY nid ASC LIMIT 1", array(':type' => $node->type, ':nid' => $node->nid))->fetchObject();
+      if (!empty($prev_node->nid)) {
+        $vars['blog_prev_url'] = url('node/' . $prev_node->nid);
+        $vars['blog_prev_title'] = check_plain($prev_node->title);
+      }
 
-    $next_node = db_query("SELECT nid, title FROM {node} WHERE type = :type AND nid < :nid AND status = 1 ORDER BY nid DESC LIMIT 1", array(':type' => $node->type, ':nid' => $node->nid))->fetchObject();
-    if ($next_node->nid) {
-      $vars['blog_next_url'] = url('node/' . $next_node->nid);
-      $vars['blog_next_title'] = check_plain($next_node->title);
+      $next_node = db_query("SELECT nid, title FROM {node} WHERE type = :type AND nid < :nid AND status = 1 ORDER BY nid DESC LIMIT 1", array(':type' => $node->type, ':nid' => $node->nid))->fetchObject();
+      if (!empty($next_node->nid)) {
+        $vars['blog_next_url'] = url('node/' . $next_node->nid);
+        $vars['blog_next_title'] = check_plain($next_node->title);
+      }
     }
   }
 }
