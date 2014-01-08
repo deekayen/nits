@@ -21,6 +21,12 @@ hide($content['links']);
 
 $external_url = url("node/{$node->nid}", array('absolute' => TRUE));
 $external_link = l($external_url, "node/{$node->nid}", array('html' => TRUE));
+$plain_text = strip_tags($content['body']['#object']->body['und'][0]['value']);
+$word_count = count(preg_split("/\s+/", $plain_text));
+$min_to_read = floor($word_count/265);
+if (empty($min_to_read)) {
+  $min_to_read = 1;
+}
 ?>
 
 <!--node-->
@@ -36,13 +42,13 @@ $external_link = l($external_url, "node/{$node->nid}", array('html' => TRUE));
 
     <aside class="nodesummary">
       <h4><?php print format_date($created, 'custom', 'M d, Y'); ?></h4>
+      <h4><?php print "$min_to_read min read"; ?></h4>
       <?php print render($content['taxonomyextra']); ?>
     </aside>
 
     <div class="content nodeteaser">
       <a href="<?php print $node_url; ?>" class="article-link" rel="bookmark">
       <?php print preg_replace("|<a\s+href.*?>|i", "", preg_replace("|</\s*a\s*>|", "", render($content['body']))); ?>
-      <?php //print render($content);?>
       </a>
     </div>
   </article>
