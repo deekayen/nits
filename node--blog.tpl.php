@@ -20,7 +20,7 @@ hide($content['links']);
 $printable_content = render($content);
 $plain_text = strip_tags($printable_content);
 $word_count = count(preg_split("/\s+/", $plain_text));
-$min_to_read = floor($word_count/265);
+$min_to_read = round($word_count/265);
 if (empty($min_to_read)) {
   $min_to_read = 1;
 }
