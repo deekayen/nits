@@ -148,7 +148,7 @@ div#allofit {
   font-size: $modular-base;
   display: block;
   margin: 0 auto $modular-base * 8 auto;
-  width: 80%;
+  width: 90%;
   h1 {
     border-bottom: 1px solid $solarized-base2;
     margin: 0 0 0.4em 0;
@@ -397,6 +397,7 @@ section[role=footerboard] {
   color: $font-color;
   opacity: 0.5;
   text-decoration: none;
+  display: none;
 }
 #blog-prev:hover, #blog-next:hover {
   opacity: 1;
@@ -534,6 +535,7 @@ footer.vcard {
   #blog-prev, #blog-next, #blog-prev a, #blog-next a {
     font-size: $modular-base * $modular-scale * $modular-scale * $modular-scale * $modular-scale;
     top: 50%;
+    display: block;
   }
   #blog-prev {
     left: 8%;
