@@ -10,7 +10,7 @@
 
 <?php print $mothership_poorthemers_helper; ?>
 
-<img style="position:fixed; bottom:0; left:0; width:inherit; max-width:30%; height:auto; z-index: -1;" src="<?php print drupal_get_path('theme', 'nits'); ?>/images/calvin_and_hobbes_thinking.png" alt="Calvin and Hobbes thinking" />
+<img style="position:fixed; bottom:0; left:0; width:inherit; max-width:30%; height:auto; z-index: -1;" src="/<?php print drupal_get_path('theme', 'nits'); ?>/images/calvin_and_hobbes_thinking.png" alt="Calvin and Hobbes thinking" />
 <div class="page cf">
   <a style="color:#000; padding-left:1em; float:left; position:fixed; font-size:35px;" href="<?php print $front_page; ?>"><i class="fa fa-home"></i></a>
   <article style="display:block; text-align:left; width:60%; margin-left:40%; clear:both">
