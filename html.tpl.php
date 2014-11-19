@@ -35,9 +35,9 @@ if(!theme_get_setting('mothership_script_place_footer')) {
       ?>
 
       <footer class="vcard">
-        <a href="https://deekayen.net/rss.xml" class="footer-1"><i class="fa fa-rss"></i> <span class="label">RSS feed</span></a>
-        <a href="mai&#108;&#116;o&#58;%&#54;4&#101;e&#107;%6&#49;&#121;e&#110;&#64;d&#101;ekay&#37;&#54;5n&#46;&#110;et" class="footer-2"><i class="fa fa-envelope-o"></i> <span class="label email">dee&#107;aye&#110;&#64;deeka&#121;en&#46;ne&#116;</span></a>
-        <a href="https://www.drupal.org/u/deekayen" class="footer-3"><i class="fa fa-drupal"></i> <span class="label">Drupal profile</span></a>
+        <a href="https://www.drupal.org/user/972" class="footer-1"><i class="fa fa-drupal"></i> <span class="label">Drupal profile</span></a>
+        <a href="mai&#108;to&#58;&#100;%61v&#37;6&#57;d&#64;dk&#110;&#46;e%6Da&#105;%&#54;C" class="footer-2"><i class="fa fa-envelope-o"></i> <span class="label email">david&#64;dkn&#46;&#101;&#109;ai&#108;</span></a>
+        <a href="https://www.linkedin.com/in/deekayen" class="footer-3"><i class="fa fa-linkedin"></i> <span class="label">LinkedIn</span></a>
         <a href="https://github.com/deekayen" class="footer-4"><i class="fa fa-github"></i> <span class="label">GitHub profile</span></a>
       </footer>
       <?php print $page_bottom; //stuff from modules always render last ?>
