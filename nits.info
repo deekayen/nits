@@ -33,7 +33,6 @@ regions[help] = Help
 regions[highlighted] = Highlighted
 
 ;-------------- C S S -------------
-stylesheets[all][] = css/font-awesome.min.css
 stylesheets[all][] = css/nits.css
 stylesheets[print][] = css/print.css
 

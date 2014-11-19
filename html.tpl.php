@@ -13,6 +13,7 @@
       <meta name="apple-mobile-web-app-capable" content="yes">
       <meta name="apple-mobile-web-app-status-bar-style" content="black">
       <link rel="stylesheet" type="text/css" href="//cloud.typography.com/618400/733542/css/fonts.css" />
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
       <?php print $styles; ?>
       <!--[if lt IE 9]>
         <script src="<?php print drupal_get_path('theme', 'mothership'); ?>/js/html5.js"></script>
