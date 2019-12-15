@@ -1,6 +1,8 @@
 Nits Drupal 7 theme for deekayen.net
 -------------------
 
+[![Project Status: Unsupported – The project has reached a stable, usable state but the author(s) have ceased all work on it. A new maintainer may be desired.](https://www.repostatus.org/badges/latest/unsupported.svg)](https://www.repostatus.org/#unsupported)
+
 A Drupal 7 theme built specifically for https://deekayen.net. It is not intended to be used as an administration theme; I recommend Seven for that instead.
 
 The main menu navigation bar is designed for the admin, node/add, and user/logout paths to automatically include icons. If you use only links which are available to logged-in users, then anonymous users will never see the navigation bar.
